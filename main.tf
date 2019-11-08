@@ -20,7 +20,7 @@ resource "netlify_site" "main" {
   name = "octozen"
 
   repo {
-    repo_branch = "feature/inverse"
+    repo_branch = "master"
     repo_path   = "imjohnbo/octozen"
     provider    = "github"
   }
