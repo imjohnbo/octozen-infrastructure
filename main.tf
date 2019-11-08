@@ -12,7 +12,7 @@ variable "netlify_token" {
 
 # Configure the Netlify Provider
 provider "netlify" {
-  token    = "${var.netlify_token}"
+  token = "${var.netlify_token}"
 }
 
 # Define your site
@@ -20,8 +20,8 @@ resource "netlify_site" "main" {
   name = "vigilant-meme"
 
   repo {
-    repo_branch   = "master"
-    repo_path     = "imjohnbo/octozen"
-    provider      = "github"
+    repo_branch = "feature/test"
+    repo_path   = "imjohnbo/octozen"
+    provider    = "github"
   }
 }
