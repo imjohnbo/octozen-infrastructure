@@ -2,6 +2,10 @@
 name: 'Terraform Workflow'
 on:
   - pull_request
+
+env:
+  TF_VAR_netlify_token: ${{ secrets.NETLIFY_TOKEN }}
+  
 jobs:
   remote:
     name: 'Terraform Actions'
