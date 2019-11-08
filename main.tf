@@ -17,7 +17,7 @@ provider "netlify" {
 
 # Define your site
 resource "netlify_site" "main" {
-  name = "vigilant-meme"
+  name = "octozen"
 
   repo {
     repo_branch = "master"
