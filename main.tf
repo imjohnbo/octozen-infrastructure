@@ -21,7 +21,7 @@ resource "netlify_site" "main" {
 
   repo {
     repo_branch = "feature/test"
-    repo_path = "imjohnbo/octozen"
-    provider = "github"
+    repo_path   = "imjohnbo/octozen"
+    provider    = "github"
   }
 }
