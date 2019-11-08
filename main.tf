@@ -20,7 +20,7 @@ resource "netlify_site" "main" {
   name = "vigilant-meme"
 
   repo {
-    repo_branch = "feature/test"
+    repo_branch = "master"
     repo_path   = "imjohnbo/octozen"
     provider    = "github"
   }
