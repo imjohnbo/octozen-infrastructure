@@ -5,7 +5,7 @@ on:
 
 env:
   TF_VAR_netlify_token: ${{ secrets.NETLIFY_TOKEN }}
-  
+
 jobs:
   remote:
     name: 'Terraform Actions'
@@ -48,3 +48,4 @@ jobs:
           tf_actions_comment: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TF_VAR_netlify_token: ${{ secrets.NETLIFY_TOKEN }}
