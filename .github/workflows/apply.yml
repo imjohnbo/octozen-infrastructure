@@ -1,0 +1,27 @@
+# An example workflow using the `remote` backend with `name`.
+# https://github.com/hashicorp/terraform-github-actions/blob/master/examples/pull_request_remote_backend_name/.github/workflows/example.yml
+name: 'Terraform Apply'
+on:
+  push:
+    branches:         # array of glob patterns matching against refs/heads. Optional; defaults to all
+    - master          # triggers on pushes that contain changes in master
+
+env:
+  TF_VAR_netlify_token: ${{ secrets.NETLIFY_TOKEN }}
+  NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+
+jobs:
+  remote:
+    name: 'Terraform Actions'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Terraform Apply'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 0.12.13
+          tf_actions_subcommand: 'apply'
+          tf_actions_comment: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

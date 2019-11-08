@@ -1,5 +1,6 @@
 # An example workflow using the `remote` backend with `name`.
-name: 'Terraform Workflow'
+# https://github.com/hashicorp/terraform-github-actions/blob/master/examples/pull_request_remote_backend_name/.github/workflows/example.yml
+name: 'Terraform Plan'
 on:
   - pull_request
 
