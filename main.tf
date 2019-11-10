@@ -1,4 +1,4 @@
-terraform {
+terraform { 
   backend "remote" {
     workspaces {
       name = "octozen"
