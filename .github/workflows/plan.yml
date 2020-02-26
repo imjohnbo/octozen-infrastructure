@@ -4,10 +4,6 @@ name: 'Terraform Plan'
 on:
   - pull_request
 
-env:
-  TF_VAR_netlify_token: ${{ secrets.NETLIFY_TOKEN }}
-  NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
-
 jobs:
   remote:
     name: 'Terraform Actions'
@@ -21,6 +17,7 @@ jobs:
           tf_actions_version: 0.12.13
           tf_actions_subcommand: 'init'
           tf_actions_comment: true
+          args: '-var="netlify_token=${{ secrets.NETLIFY_TOKEN }}"'
         env:
           # TF_CLI_ARGS_init is used to pass the backend configuration to the run.
           # This way is chosen to replicate how one would use the `remote` backend with Terraform Cloud/Enterprise via automation.
