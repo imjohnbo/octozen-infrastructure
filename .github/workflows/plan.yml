@@ -32,7 +32,7 @@ jobs:
         env:
           # TF_CLI_ARGS_init is used to pass the backend configuration to the run.
           # This way is chosen to replicate how one would use the `remote` backend with Terraform Cloud/Enterprise via automation.
-          TF_CLI_ARGS_init: '-backend-config="token=${{ secrets.TFP_TOKEN }}" -backend-config="organization=imjohnbo-test"'
+          TF_CLI_ARGS_init: '-backend-config="token=${{ secrets.TFP_TOKEN }}"'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@v0.8
